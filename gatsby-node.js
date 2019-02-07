@@ -4,6 +4,7 @@ const endpoint = 'https://api.github.com';
 
 const getUserData = names =>
   Promise.all(
+    
     names.map(async name => {
       const { data: user } = await axios({
         method: 'get',
@@ -20,7 +21,7 @@ const getUserData = names =>
   );
 
 exports.createPages = async ({ actions: { createPage } }) => {
-  const allUsers = await getUserData(['lukethacoder', 'wesbos']);
+  const allUsers = await getUserData(['lukethacoder', 'stolinski', 'wesbos', 'KyleAMathews', 'DevonCrawford']);
 
   // Create a page that lists all Pokémon.
   createPage({
